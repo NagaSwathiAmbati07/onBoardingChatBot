@@ -2,6 +2,10 @@ import React, { useEffect, useState, Fragment, useContext } from 'react'
 import { StyleSheet, ScrollView } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import BubblesFactory from '~/components/bubbles-factory'
+<<<<<<< Updated upstream
+=======
+import ChatBubble from '~/components/chat-bubble'
+>>>>>>> Stashed changes
 import data from '~/assets/json/chat-bot.json'
 import ChatBotContext from '~/providers/chatbot-provider'
 import { ComponentsFactory } from '~/factories/components-factory'
@@ -17,6 +21,7 @@ const ChatBot = (props) => {
             setComponents([
                 ...components,
                 // eslint-disable-next-line react/jsx-key
+<<<<<<< Updated upstream
                 <BubblesFactory
                     data={data.chatBot[state.currentAction]}
                     bubble={ComponentsFactory(state.renderItem)}
@@ -25,6 +30,9 @@ const ChatBot = (props) => {
                         state.nextAction && dispatch({ type: state.nextAction })
                     }}
                 />
+=======
+                <BubblesFactory data={data?.chatBot.messages} bubble={<ChatBubble/>} interval={3000}/>
+>>>>>>> Stashed changes
             ])
         }
     }, [state])
